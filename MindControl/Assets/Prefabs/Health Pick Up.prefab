@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5675099665573404698}
   m_Layer: 0
   m_Name: Health Pick Up
-  m_TagString: HealthPickUp
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.7487047, y: 1.97, z: -5.98}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -105,10 +105,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.8582278
+  m_Radius: 0.51362985
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0.35822785, y: 0, z: 0}
+  m_Center: {x: 0.013629744, y: 0, z: 0}
 --- !u!54 &2801778489180875524
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -117,7 +117,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5790625229205066276}
   serializedVersion: 4
-  m_Mass: 200
+  m_Mass: 1
   m_Drag: 1
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
