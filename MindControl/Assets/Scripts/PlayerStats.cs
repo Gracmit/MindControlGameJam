@@ -34,4 +34,15 @@ public class PlayerStats : MonoBehaviour
     {
         // Do this sometime in the future
     }
+
+    public void AddHealth(int amount)
+    {
+        _hp += amount;
+        if (_hp > _maxHp)
+        {
+            _hp = _maxHp;
+        }
+        
+        SetHealth();
+    }
 }
