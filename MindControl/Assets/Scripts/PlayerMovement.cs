@@ -1,9 +1,10 @@
-using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float _speed = 12f;
+    [SerializeField] private float _dashSpeed = 50f;
+    [SerializeField] private float _dashTime = 0.5f;
     [SerializeField] private float _gravity = -9.81f;
     [SerializeField] private float _jumpForce;
     [SerializeField] private Transform _groundCheck;
@@ -11,7 +12,10 @@ public class PlayerMovement : MonoBehaviour
 
     private CharacterController _controller;
     private Vector3 _velocity;
-    
+    private bool _isDashing;
+    private Vector3 _dashVector;
+    private float _dashTimer;
+
     private void Awake()
     {
         _controller = GetComponent<CharacterController>();
@@ -33,11 +37,36 @@ public class PlayerMovement : MonoBehaviour
         
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
+        
+        if (!_isDashing && Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            _isDashing = true;
+            _dashVector = transform.right * x + transform.forward * z;
+            if (_dashVector == Vector3.zero)
+            {
+                _dashVector = transform.forward;
+            }
+            _dashTimer = Time.time + _dashTime;
+            _velocity.y = 0;
+        }
 
-        Vector3 move = transform.right * x + transform.forward * z;
-        _controller.Move(move * (_speed * Time.deltaTime));
+        if (_isDashing)
+        {
+            _controller.Move(_dashVector * (_dashSpeed * Time.deltaTime));
+        }
 
-        _velocity.y += _gravity * Time.deltaTime;
-        _controller.Move(_velocity * Time.deltaTime);
+        if (_dashTimer < Time.time)
+        {
+            _isDashing = false;
+        }
+
+        if (!_isDashing)
+        {
+            Vector3 move = transform.right * x + transform.forward * z;
+            _controller.Move(move * (_speed * Time.deltaTime));
+            _velocity.y += _gravity * Time.deltaTime;
+            _controller.Move(_velocity * Time.deltaTime);
+        }
+
     }
 }

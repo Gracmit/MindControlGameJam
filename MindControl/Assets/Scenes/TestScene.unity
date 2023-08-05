@@ -519,7 +519,7 @@ Transform:
   m_GameObject: {fileID: 1350652365}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.46582413, y: 10.81, z: -2.8165588}
+  m_LocalPosition: {x: -0.46582413, y: 1.03, z: -2.8165588}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -580,6 +580,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 12
+  _dashSpeed: 50
+  _dashTime: 0.3
   _gravity: -15.58
   _jumpForce: 12
   _groundCheck: {fileID: 1846665224}
