@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8969833670560830797}
   - component: {fileID: 5004101343335513601}
   - component: {fileID: 814519661695126216}
-  - component: {fileID: 5608042832889961459}
   - component: {fileID: 1060272915298643213}
+  - component: {fileID: -4824608853137711268}
   m_Layer: 0
   m_Name: Cannon Ball
   m_TagString: Untagged
@@ -107,20 +107,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5608042832889961459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3349209744580680844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d3cb8ea0019464695a9460e3f422d60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rigidbody: {fileID: 1060272915298643213}
-  _bulletSpeed: 3000
 --- !u!54 &1060272915298643213
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -148,3 +134,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-4824608853137711268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3349209744580680844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da1b074b254f4486ab63cba0c1416a6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 1060272915298643213}
+  _bulletSpeed: 1500

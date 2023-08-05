@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class EnemyBullet : MonoBehaviour
 {
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private float _bulletSpeed;
@@ -11,12 +11,12 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            var stats = collision.gameObject.GetComponent<Enemy>();
-            stats.TakeHit(15);
+            var stats = collision.gameObject.GetComponent<PlayerStats>();
+            stats.TakeHit(10);
         }
-        
+
         Destroy(gameObject);
     }
 }

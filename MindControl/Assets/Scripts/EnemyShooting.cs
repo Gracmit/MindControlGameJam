@@ -28,7 +28,7 @@ public class EnemyShooting : MonoBehaviour
     {
         _shootTimer = Time.time + _shootingDelay;
         var instantiatedObject = Instantiate(_bullet, _bulletPoint.position, _cannon.transform.rotation);
-        var bullet = instantiatedObject.GetComponent<Bullet>();
+        var bullet = instantiatedObject.GetComponent<EnemyBullet>();
         bullet.Shoot();
     }
 
