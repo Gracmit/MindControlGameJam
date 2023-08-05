@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _jumpForce;
     [SerializeField] private Transform _groundCheck;
     [SerializeField] private LayerMask _groundMask;
+    [SerializeField] private ControlsData _controls;
 
     private CharacterController _controller;
     private Vector3 _velocity;
@@ -34,11 +35,32 @@ public class PlayerMovement : MonoBehaviour
         {
             _velocity.y = _jumpForce;
         }
+        float x = 0;
+        float z = 0; 
         
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        if (Input.GetKey(_controls.Forward))
+        {
+            z = 1;
+        }
+
+        if (Input.GetKey(_controls.Backwards))
+        {
+            z = -1;
+        }
+
+        if (Input.GetKey(_controls.Left))
+        {
+            x = -1;
+        }
         
-        if (!_isDashing && Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKey(_controls.Right))
+        {
+            x = 1;
+        }
+        
+
+        
+        if (!_isDashing && Input.GetKeyDown(_controls.Dash))
         {
             _isDashing = true;
             _dashVector = transform.right * x + transform.forward * z;

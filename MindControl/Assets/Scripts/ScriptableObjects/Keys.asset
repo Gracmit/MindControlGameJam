@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44ad5096058da1a4c875adb840b7b663, type: 3}
+  m_Name: Keys
+  m_EditorClassIdentifier: 
+  Jump: 32
+  Dash: 304
+  Forward: 119
+  Backwards: 102
+  Right: 100
+  Left: 97
+  Shoot: 118
+  Melee: 113
+  AvailableKeys: 7a0000007800000063000000720000006200000009000000670000007300000065000000

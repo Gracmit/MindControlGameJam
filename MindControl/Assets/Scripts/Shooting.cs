@@ -8,6 +8,7 @@ public class Shooting : MonoBehaviour
     [SerializeField] private Transform _shootingPoint;
     [SerializeField] private int _ammoCount;
     [SerializeField] private TMP_Text _ammoText;
+    [SerializeField] private ControlsData _controls;
 
 
     private void Start()
@@ -17,10 +18,10 @@ public class Shooting : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && _ammoCount > 0)
+        if (Input.GetKeyDown(_controls.Shoot) && _ammoCount > 0)
         {
             Quaternion rotation = Camera.main.transform.rotation;
-            var instantiatedObject = GameObject.Instantiate(_bullet, _shootingPoint.position, rotation);
+            var instantiatedObject = Instantiate(_bullet, _shootingPoint.position, rotation);
             
             var bullet = instantiatedObject.GetComponent<Bullet>();
             bullet.Shoot();
