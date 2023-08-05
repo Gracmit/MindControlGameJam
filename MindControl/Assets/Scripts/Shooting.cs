@@ -1,3 +1,5 @@
+using System;
+using TMPro;
 using UnityEngine;
 
 public class Shooting : MonoBehaviour
@@ -6,6 +8,13 @@ public class Shooting : MonoBehaviour
     [SerializeField] private GameObject _bullet;
     [SerializeField] private Transform _shootingPoint;
     [SerializeField] private int _ammoCount;
+    [SerializeField] private TMP_Text _ammoText;
+
+
+    private void Start()
+    {
+        UpdateAmmoText();
+    }
 
     void Update()
     {
@@ -16,6 +25,13 @@ public class Shooting : MonoBehaviour
             
             var bullet = instantiatedObject.GetComponent<Bullet>();
             bullet.Shoot();
+            _ammoCount--;
+            UpdateAmmoText();
         }
+    }
+
+    public void UpdateAmmoText()
+    {
+        _ammoText.text = $"Amm0: {_ammoCount}";
     }
 }
