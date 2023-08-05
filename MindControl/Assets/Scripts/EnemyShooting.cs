@@ -9,7 +9,7 @@ public class EnemyShooting : MonoBehaviour
 
     private GameObject _player;
     private float _shootTimer = 0f;
-    private float _shootingDelay;
+    private float _shootingDelay = 1f;
     private void Awake()
     {
         _player = FindObjectOfType<Shooting>().gameObject;
@@ -34,10 +34,8 @@ public class EnemyShooting : MonoBehaviour
     private void RotateCannon()
     {
         _cannonLegs.transform.LookAt(_player.transform.position);
-        _cannonLegs.transform.Rotate(_cannonLegs.transform.up, 90);
         _cannonLegs.transform.localEulerAngles = new Vector3(0, _cannonLegs.transform.eulerAngles.y, 0);
-        _cannon.transform.LookAt(_player.transform.position);
-        _cannon.transform.Rotate(_cannon.transform.up, 90);
-        _cannon.transform.localEulerAngles = new Vector3(0, 0, _cannon.transform.eulerAngles.z);
+        _cannon.transform.LookAt(_player.transform.position, _cannonLegs.transform.up);
+       
     }
 }
