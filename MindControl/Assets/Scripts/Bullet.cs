@@ -19,6 +19,12 @@ public class Bullet : MonoBehaviour
             stats.TakeHit(10);
         }
         
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            var stats = collision.gameObject.GetComponent<Enemy>();
+            stats.TakeHit(15);
+        }
+        
         Destroy(gameObject);
     }
 }

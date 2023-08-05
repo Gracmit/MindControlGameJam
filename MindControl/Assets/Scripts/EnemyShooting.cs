@@ -4,6 +4,7 @@ public class EnemyShooting : MonoBehaviour
 {
     [SerializeField] private GameObject _cannon;
     [SerializeField] private GameObject _cannonLegs;
+    //[SerializeField] private GameObject _slime;
     [SerializeField] private GameObject _bullet;
     [SerializeField] private Transform _bulletPoint;
 
@@ -33,8 +34,11 @@ public class EnemyShooting : MonoBehaviour
 
     private void RotateCannon()
     {
+        
+        //_slime.transform.LookAt(_player.transform.position);
+        //_slime.transform.localEulerAngles = new Vector3(0, _slime.transform.eulerAngles.y, 0);
         _cannonLegs.transform.LookAt(_player.transform.position);
-        _cannonLegs.transform.localEulerAngles = new Vector3(0, _cannonLegs.transform.eulerAngles.y, 0);
+        _cannonLegs.transform.localEulerAngles = new Vector3(0, _cannonLegs.transform.localEulerAngles.y, 0);
         _cannon.transform.LookAt(_player.transform.position, _cannonLegs.transform.up);
        
     }
