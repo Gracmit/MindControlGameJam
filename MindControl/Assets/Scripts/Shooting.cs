@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 
@@ -33,5 +32,11 @@ public class Shooting : MonoBehaviour
     public void UpdateAmmoText()
     {
         _ammoText.text = $"Amm0: {_ammoCount}";
+    }
+
+    public void AddAmmo(int ammoAmount)
+    {
+        _ammoCount += ammoAmount;
+        UpdateAmmoText();
     }
 }
