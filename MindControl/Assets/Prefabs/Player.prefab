@@ -452,6 +452,7 @@ GameObject:
   - component: {fileID: 3607143224038397037}
   - component: {fileID: 9089236923003935791}
   - component: {fileID: 5794629674788698592}
+  - component: {fileID: 136225665875752908}
   m_Layer: 5
   m_Name: Swirly
   m_TagString: Untagged
@@ -499,7 +500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -516,6 +517,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &136225665875752908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6487365542734819994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e6a92d19b3c09543a1002d15dbf7bfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _swirlyTransform: {fileID: 3607143224038397037}
+  _swirly: {fileID: 5794629674788698592}
 --- !u!1 &8589028204011061195
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,8 +663,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96bed398a49db324096e94045873985d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _horizontalSpeed: 500
-  _verticalSpeed: 500
+  _horizontalSpeed: 400
+  _verticalSpeed: 400
 --- !u!114 &6551945611402016524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -841,8 +856,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 07cc3e929d2c51d4194eb88421994c23, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.491
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -937,8 +952,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: bbc5d64653822274289489340895cd35, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.517
   m_Pitch: 1
   Loop: 0
   Mute: 0

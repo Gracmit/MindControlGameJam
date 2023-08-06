@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44ad5096058da1a4c875adb840b7b663, type: 3}
   m_Name: Keys
   m_EditorClassIdentifier: 
-  Jump: 32
-  Dash: 304
+  Jump: 102
+  Dash: 118
   Forward: 119
   Backwards: 115
-  Right: 100
-  Left: 97
-  Shoot: 101
-  Melee: 113
-  AvailableKeys: 7a0000007800000063000000720000006600000076000000620000000900000067000000
+  Right: 114
+  Left: 120
+  Shoot: 32
+  Melee: 9
+  AvailableKeys: 7a0000006300000062000000670000006400000030010000710000006100000065000000
