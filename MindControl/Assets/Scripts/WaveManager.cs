@@ -8,6 +8,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private SpawnManager _spawnManager;
     [SerializeField] private ControlsManager _controlsManager;
     [SerializeField] private TMP_Text _countdownText;
+    [SerializeField] private Swirly _swirly;
     private int _waveNumber = 1;
     private int _amountOfEnemies = 1;
     public static WaveManager Instance => _instance;
@@ -43,6 +44,7 @@ public class WaveManager : MonoBehaviour
             }
             _amountOfEnemies = enemies;
             _controlsManager.ChangeControls();
+            _swirly.ShowSwirly();
             StartCoroutine(StartRound());
         }
     }
@@ -82,3 +84,4 @@ public class WaveManager : MonoBehaviour
         _amountOfEnemies--;
     }
 }
+
