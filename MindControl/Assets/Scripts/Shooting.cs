@@ -9,6 +9,9 @@ public class Shooting : MonoBehaviour
     [SerializeField] private int _ammoCount;
     [SerializeField] private TMP_Text _ammoText;
     [SerializeField] private ControlsData _controls;
+    [SerializeField] private Animator _animator;
+    [SerializeField] private AudioSource _audioShooting;
+    private static readonly int Shoot = Animator.StringToHash("Shoot");
 
 
     private void Start()
@@ -20,6 +23,8 @@ public class Shooting : MonoBehaviour
     {
         if (Input.GetKeyDown(_controls.Shoot) && _ammoCount > 0)
         {
+            _animator.SetTrigger(Shoot);
+            _audioShooting.Play();
             Quaternion rotation = Camera.main.transform.rotation;
             var instantiatedObject = Instantiate(_bullet, _shootingPoint.position, rotation);
             

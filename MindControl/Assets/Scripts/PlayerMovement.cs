@@ -10,9 +10,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform _groundCheck;
     [SerializeField] private LayerMask _groundMask;
     [SerializeField] private ControlsData _controls;
+    [SerializeField] private AudioSource _audioDash;
 
     private CharacterController _controller;
-    private AudioSource _audio;
     private Vector3 _velocity;
     private bool _isDashing;
     private Vector3 _dashVector;
@@ -21,7 +21,6 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         _controller = GetComponent<CharacterController>();
-        _audio = GetComponent<AudioSource>();
     }
     
     void Update()
@@ -65,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
         if (!_isDashing && Input.GetKeyDown(_controls.Dash))
         {
             _isDashing = true;
-            _audio.Play();
+            _audioDash.Play();
             _dashVector = transform.right * x + transform.forward * z;
             if (_dashVector == Vector3.zero)
             {

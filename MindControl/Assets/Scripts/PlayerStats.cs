@@ -7,6 +7,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private int _hp;
     [SerializeField] private int _maxHp;
     [SerializeField] private TMP_Text _healthText;
+    [SerializeField] private AudioSource _audioTakeHIt;
 
     private void Start()
     {
@@ -15,6 +16,7 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeHit(int amount)
     {
+        _audioTakeHIt.Play();
         _hp -= amount;
         if (_hp < 0)
         {
