@@ -10,14 +10,6 @@ public class ControlsManager : MonoBehaviour
 
     private string _text;
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            ChangeControls();
-        }
-    }
-
     public void ChangeControls()
     {
         _text = $"Changed Controls: {Environment.NewLine}";

@@ -3062,6 +3062,14 @@ PrefabInstance:
       propertyPath: _ammoText
       value: 
       objectReference: {fileID: 332005636}
+    - target: {fileID: 4681412137741144875, guid: e3c4db748e2f1b74884c31e9fed56159, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 778798483}
+    - target: {fileID: 5034667347373232794, guid: e3c4db748e2f1b74884c31e9fed56159, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.853
+      objectReference: {fileID: 0}
     - target: {fileID: 7687516556252631229, guid: e3c4db748e2f1b74884c31e9fed56159, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3695,6 +3703,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 933704348}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &778798483 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1572411953938030661, guid: e3c4db748e2f1b74884c31e9fed56159, type: 3}
+  m_PrefabInstance: {fileID: 662155552}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &783341090
 PrefabInstance:
   m_ObjectHideFlags: 0

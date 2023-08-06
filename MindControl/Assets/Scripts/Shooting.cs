@@ -32,7 +32,7 @@ public class Shooting : MonoBehaviour
 
     public void UpdateAmmoText()
     {
-        _ammoText.text = $"Amm0: {_ammoCount}";
+        _ammoText.text = $"{_ammoCount}";
     }
 
     public void AddAmmo(int ammoAmount)

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -9,14 +10,15 @@ public class Bullet : MonoBehaviour
         _rigidbody.AddForce(transform.forward * _bulletSpeed);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
-            var stats = collision.gameObject.GetComponent<Enemy>();
+            var stats = other.gameObject.GetComponent<Enemy>();
             stats.TakeHit(15);
         }
         
-        Destroy(gameObject);
+        if(!other.gameObject.CompareTag("Player"))
+            Destroy(gameObject);
     }
 }
