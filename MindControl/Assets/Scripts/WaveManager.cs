@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -5,17 +6,50 @@ using UnityEngine;
 public class WaveManager : MonoBehaviour
 {
     [SerializeField] private SpawnManager _spawnManager;
+    [SerializeField] private ControlsManager _controlsManager;
     [SerializeField] private TMP_Text _countdownText;
     private int _waveNumber = 1;
+    private int _amountOfEnemies = 1;
+    public static WaveManager Instance => _instance;
+
+    private static WaveManager _instance;       
+
+    private void Awake()
+    {
+        if (_instance != null && _instance != this) 
+        { 
+            Destroy(this); 
+        } 
+        else 
+        { 
+            _instance = this; 
+        }
+    }
 
     private void Start()
     {
-        StartCoroutine(StartGame());
+        StartCoroutine(StartRound());
         _countdownText.enabled = false;
     }
 
-    private IEnumerator StartGame()
+    private void Update()
     {
+        if (_amountOfEnemies <= 0)
+        {
+            var enemies = _waveNumber;
+            if(_waveNumber > 5)
+            { 
+                enemies = 5;
+            }
+            _amountOfEnemies = enemies;
+            _controlsManager.ChangeControls();
+            StartCoroutine(StartRound());
+        }
+    }
+
+    private IEnumerator StartRound()
+    {
+        
         yield return new WaitForSeconds(5f);
 
         _countdownText.enabled = true;
@@ -41,5 +75,10 @@ public class WaveManager : MonoBehaviour
         
         _spawnManager.Spawn(spawnAmount);
         _waveNumber++;
+    }
+
+    public void EnemyDied()
+    {
+        _amountOfEnemies--;
     }
 }

@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
             _velocity.y = -2f;
         }
 
-        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
+        if (isGrounded && Input.GetKeyDown(_controls.Jump))
         {
             _velocity.y = _jumpForce;
         }

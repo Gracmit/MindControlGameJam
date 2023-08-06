@@ -1,5 +1,3 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -20,6 +18,7 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
+        WaveManager.Instance.EnemyDied();
         Destroy(gameObject);
     }
 
@@ -29,7 +28,7 @@ public class Enemy : MonoBehaviour
         {
             Instantiate(_healthPickUp, transform.position, Quaternion.identity);
         }
-        
+        WaveManager.Instance.EnemyDied();
         Destroy(gameObject);
     }
 }

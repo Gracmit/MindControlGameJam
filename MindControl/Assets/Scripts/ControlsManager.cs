@@ -18,7 +18,7 @@ public class ControlsManager : MonoBehaviour
         }
     }
 
-    private void ChangeControls()
+    public void ChangeControls()
     {
         _text = $"Changed Controls: {Environment.NewLine}";
             

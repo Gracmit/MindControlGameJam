@@ -6160,6 +6160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spawnManager: {fileID: 1329479124}
+  _controlsManager: {fileID: 1329479121}
   _countdownText: {fileID: 15982532}
 --- !u!114 &1329479124
 MonoBehaviour:
