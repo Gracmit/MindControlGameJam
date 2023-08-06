@@ -7,6 +7,7 @@ public class EnemyShooting : MonoBehaviour
     //[SerializeField] private GameObject _slime;
     [SerializeField] private GameObject _bullet;
     [SerializeField] private Transform _bulletPoint;
+    [SerializeField] private AudioSource _audioShoot;
 
     private GameObject _player;
     private float _shootTimer = 0f;
@@ -26,6 +27,7 @@ public class EnemyShooting : MonoBehaviour
 
     private void Shoot()
     {
+        _audioShoot.Play();
         _shootTimer = Time.time + _shootingDelay;
         var instantiatedObject = Instantiate(_bullet, _bulletPoint.position, _cannon.transform.rotation);
         var bullet = instantiatedObject.GetComponent<EnemyBullet>();
