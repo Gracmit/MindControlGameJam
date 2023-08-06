@@ -75,4 +75,9 @@ public class ControlsManager : MonoBehaviour
         var random = Random.Range(0, 3);
         return random == 1;
     }
+
+    public void ResetControls()
+    {
+        _controls.ResetControls();
+    }
 }

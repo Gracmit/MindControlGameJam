@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -34,7 +35,8 @@ public class PlayerStats : MonoBehaviour
 
     private void Die()
     {
-        // Do this sometime in the future
+        WaveManager.Instance.Reset();
+        SceneManager.LoadScene("StartScene");
     }
 
     public void AddHealth(int amount)

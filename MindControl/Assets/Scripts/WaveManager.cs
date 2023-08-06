@@ -83,5 +83,11 @@ public class WaveManager : MonoBehaviour
     {
         _amountOfEnemies--;
     }
+
+    public void Reset()
+    {
+        _waveNumber = 1;
+        _controlsManager.ResetControls();
+    }
 }
 
