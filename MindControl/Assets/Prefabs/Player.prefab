@@ -413,6 +413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _collider: {fileID: 8499554286896513060}
   _controls: {fileID: 11400000, guid: 5e0726666cfd40e42b136b8101abb613, type: 2}
+  _animator: {fileID: 0}
 --- !u!54 &7763572264484642340
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -791,6 +792,10 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -6093592463355912122, guid: dc0a719f6b59e144494cb15668337d78, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b5cf965f3eae1f643a6579a4ad86c5b8, type: 2}
+    - target: {fileID: -809828480950454423, guid: dc0a719f6b59e144494cb15668337d78, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b5cf965f3eae1f643a6579a4ad86c5b8, type: 2}
